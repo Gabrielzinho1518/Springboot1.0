@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>form.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808;}
+.s1 { color: #174ad4;}
+.s2 { color: #0033b3;}
+.s3 { color: #067d17;}
+.s4 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+form.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">html </span><span class="s1">xmlns:th</span><span class="s3">=&quot;http://www.thymeleaf.org&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">head</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">meta </span><span class="s1">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">title</span><span class="s0">&gt;gabrielzinho&lt;/</span><span class="s2">title</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">head</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">body</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">h1</span><span class="s0">&gt;Cadastro de Produto&lt;/</span><span class="s2">h1</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">a </span><span class="s1">th:href</span><span class="s3">=&quot;@{/}&quot;</span><span class="s0">&gt;Index&lt;/</span><span class="s2">a</span><span class="s0">&gt;</span>
+<span class="s4">&lt;!-- Formulário para criar um produto --&gt;</span>
+<span class="s0">&lt;</span><span class="s2">form </span><span class="s1">action</span><span class="s3">=&quot;#&quot; </span><span class="s1">th:action</span><span class="s3">= &quot;@{/produto}&quot; </span><span class="s1">th:object</span><span class="s3">=&quot;${produto}&quot; </span><span class="s1">method</span><span class="s3">=&quot;post&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Nome do Produto --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;nome&quot;</span><span class="s0">&gt;Nome:&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;text&quot; </span><span class="s1">id</span><span class="s3">=&quot;nome&quot; </span><span class="s1">th:field</span><span class="s3">=&quot;*{nome}&quot; </span><span class="s1">required</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Descrição do Produto --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;descricao&quot;</span><span class="s0">&gt;Descrição:&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;text&quot; </span><span class="s1">id</span><span class="s3">=&quot;descricao&quot; </span><span class="s1">th:field</span><span class="s3">=&quot;*{descricao}&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Preço do Produto --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;preco&quot;</span><span class="s0">&gt;Preço:&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;number&quot; </span><span class="s1">id</span><span class="s3">=&quot;preco&quot; </span><span class="s1">th:field</span><span class="s3">=&quot;*{preco}&quot; </span><span class="s1">step</span><span class="s3">=&quot;0.01&quot; </span><span class="s1">required</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Quantidade do Produto --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;quantidade&quot;</span><span class="s0">&gt;Quantidade:&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;number&quot; </span><span class="s1">id</span><span class="s3">=&quot;quantidade&quot; </span><span class="s1">th:field</span><span class="s3">=&quot;*{quantidade}&quot; </span><span class="s1">required</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Imagem do Produto --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;imagem&quot;</span><span class="s0">&gt;Imagem (URL):&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;text&quot; </span><span class="s1">id</span><span class="s3">=&quot;imagem&quot; </span><span class="s1">th:field</span><span class="s3">=&quot;*{imagem}&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Botão para enviar o formulário --&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">button </span><span class="s1">type</span><span class="s3">=&quot;submit&quot;</span><span class="s0">&gt;Salvar&lt;/</span><span class="s2">button</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">form</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">body</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">html</span><span class="s0">&gt;</span>
+</pre>
+</body>
+</html>
